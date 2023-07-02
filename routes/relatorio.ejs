@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>:)</title>
+  <style>
+    table {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3 style="text-align: center;">Sistema de Vendas</h3>
+  <table>
+    <tr>
+      <th>Nome: &lt;%= nome%&gt;</th>
+      <th>Email: &lt;%= email%&gt;</th>
+    </tr>
+    <tr>
+      <th>Numero de Contato: &lt;%= numeroContato %&gt;</th>
+      <th>Forma de Pagamento: &lt;%= formaPagamento %&gt;</th>
+    </tr>
+  </table>
+  <h3>Detalhes do Produto:</h3>
+  <table>
+    <tr>
+      <th>Nome:</th>
+      <th>Categoria:</th>
+      <th>Quantidade</th>
+      <th>Preço</th>
+      <th>Sub Total</th>
+    </tr>
+    &lt;% if(detalheProduto.length &gt; 0){ %&gt;
+    &lt;% detalheProduto.forEach(produto =&gt;{ %&gt;
+    <tr>
+      <td>&lt;%= produto.nome %&gt;</td>
+      <td>&lt;% if(detalheProduto.leght &gt; 0){ %&gt;
+        &lt;% detalheProduto.forEach(produto =&gt;{ %&gt;
+    <tr>
+      <td>&lt;%= produto.nome %&gt;</td>
+      <td>&lt;%= produto.categoria %&gt;</td>
+      <td>&lt;%= produto.quantidade %&gt;</td>
+      <td>&lt;%= produto.preco %&gt;</td>
+      <td>&lt;%= produto.total %&gt;</td>
+    </tr>
+    &lt;%});%&gt;
+    &lt;%}%&gt; = produto.categoria %&gt;</td>
+    <td>&lt;%= produto.quantidade %&gt;</td>
+    <td>&lt;%= produto.preco %&gt;</td>
+    <td>&lt;%= produto.total %&gt;</td>
+    </tr>
+    &lt;%});%&gt;
+    &lt;%}%&gt;
+  </table>
+  <h3>Total: &lt;%= valorTotal %&gt;</h3>
+  <h3>Obrigada pela visista!</h3>
+</body>
+
+</html>
